@@ -1,4 +1,6 @@
 import { App } from './system/App.js';
+import { Game } from './game/Game.js';
 
 const app = new App();
-app.run();
+const game = new Game();
+app.run(game);

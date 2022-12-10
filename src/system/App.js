@@ -1,7 +1,10 @@
 import * as PIXI from 'pixijs';
 
 export class App {
-    run() {
+    game = null;
+
+    run(game) {
+        this.game = game;
 
         this.app = new PIXI.Application({
             width: 800,
@@ -9,5 +12,8 @@ export class App {
         });
 
         document.body.appendChild(this.app.view);
+
+        this.app.stage.addChild(this.game.container);
+        this.game.start();
     }
 }
