@@ -46,7 +46,7 @@ export class Game {
         const homescapesLogo = new PIXI.Sprite(PIXI.Assets.get('homescapes-logo'));
         homescapesLogo.x = 32;
         homescapesLogo.y = 5;
-        homescapesLogo.zIndex = 2;
+        homescapesLogo.zIndex = 5;
         this.container.addChild(homescapesLogo);
     }
 
@@ -64,7 +64,7 @@ export class Game {
         ctaButtonSprite.cursor = 'pointer';
         ctaButtonSprite.anchor.set(0.5, 0.5);
 
-        ctaButtonSprite.zIndex = 2;
+        ctaButtonSprite.zIndex = 5;
 
         ctaButtonSprite.x = screenWidth / 2;
         ctaButtonSprite.y = screenHeight - ctaButtonSprite.height / 2 - 10;
@@ -85,6 +85,7 @@ export class Game {
         const menuXPosition = screenWidth - 520;
         const menuYPosition = 60;
         this._menu = new BuildMenu(menuXPosition, menuYPosition);
+        this._menu.container.zIndex = 4;
         this.container.addChild(this._menu.container);
     }
 
@@ -121,7 +122,7 @@ export class Game {
         finalModal.anchor.set(0.5, 0.5);
         finalModal.x = screenWidth / 2;
         finalModal.y = screenHeight / 2 - 80;
-        finalModal.zIndex = 2;
+        finalModal.zIndex = 4;
         gsap.to(finalModal.scale, {
             startAt: {
                 x: 0.7,
