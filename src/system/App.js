@@ -1,19 +1,24 @@
 import * as PIXI from 'pixijs';
 
 export class App {
-    game = null;
-
-    run(game) {
-        this.game = game;
+    async run(game, gameConfig) {
+        const { screenWidth, screenHeight, backgroundColor } = gameConfig;
 
         this.app = new PIXI.Application({
-            width: 800,
-            height: 600,
+            width: screenWidth,
+            height: screenHeight,
+            backgroundColor,
         });
-
         document.body.appendChild(this.app.view);
 
-        this.app.stage.addChild(this.game.container);
-        this.game.start();
+        await this.loadAssets();
+
+        this.app.stage.addChild(game.container);
+        game.start();
+    }
+
+    async loadAssets() {
+        await PIXI.Assets.init({ manifest: '/src/assets/manifest.json' });
+        await PIXI.Assets.loadBundle('common');
     }
 }

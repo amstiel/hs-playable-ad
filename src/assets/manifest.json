@@ -1,0 +1,25 @@
+{
+  "bundles":[
+    {
+      "name":"common",
+      "assets":[
+        {
+          "name":"background",
+          "srcs":"src/assets/sprites/background.png"
+        },
+        {
+          "name": "austin",
+          "srcs": "src/assets/sprites/austin.png"
+        },
+        {
+          "name": "old-stair",
+          "srcs": "src/assets/sprites/old-stair.png"
+        },
+        {
+          "name": "homescapes-logo",
+          "srcs": "src/assets/sprites/homescapes-logo.png"
+        }
+      ]
+    }
+  ]
+}
