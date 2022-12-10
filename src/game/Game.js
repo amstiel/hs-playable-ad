@@ -19,6 +19,7 @@ export class Game {
         this.renderStair();
         this.renderBuildButton();
         this.renderMenu();
+        this.renderCallToActionButton();
 
         eventBus.on('stair-variant-confirm', () => {
             this._menu.hide();
@@ -34,6 +35,30 @@ export class Game {
     renderStair() {
         this._stair = new Stair(screenWidth);
         this.container.addChild(this._stair.sprite);
+    }
+
+    renderCallToActionButton() {
+        const ctaButtonSprite = new PIXI.Sprite(PIXI.Assets.get('cta-button'));
+
+        ctaButtonSprite.interactive = true;
+        ctaButtonSprite.cursor = 'pointer';
+        ctaButtonSprite.anchor.set(0.5, 0.5);
+
+        ctaButtonSprite.zIndex = 2;
+
+        ctaButtonSprite.x = screenWidth / 2;
+        ctaButtonSprite.y = screenHeight - ctaButtonSprite.height / 2 - 10;
+
+        gsap.to(ctaButtonSprite.scale, {
+            ease: 'power2.out',
+            x: 1.07,
+            y: 1.07,
+            duration: 0.5,
+            repeat: -1,
+            yoyo: true,
+        });
+
+        this.container.addChild(ctaButtonSprite);
     }
 
     renderMenu() {

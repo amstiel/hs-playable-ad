@@ -22,6 +22,10 @@
         {
           "name": "final-modal",
           "srcs": "src/assets/sprites/final-modal.png"
+        },
+        {
+          "name": "cta-button",
+          "srcs": "src/assets/sprites/button.png"
         }
       ]
     },
