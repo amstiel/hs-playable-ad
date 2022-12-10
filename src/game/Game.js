@@ -2,6 +2,7 @@ import * as PIXI from 'pixijs';
 import gsap from 'gsap';
 import { Stair } from './Stair';
 import { BuildMenu } from './BuildMenu';
+import { Decorations } from './Decorations';
 import { eventBus } from '../system/EventBus';
 import gameConfig from './config.json';
 
@@ -23,6 +24,7 @@ export class Game {
         this.renderCallToActionButton();
         this.renderLogo();
         this.renderAustin();
+        this.renderDecorations();
 
         eventBus.on('stair-variant-confirm', () => {
             this._menu.hide();
@@ -86,10 +88,17 @@ export class Game {
         this.container.addChild(this._menu.container);
     }
 
+    renderDecorations() {
+        const decorations = new Decorations(this.container);
+        decorations.render();
+        // this.container.addChild(decorations.container);
+    }
+
     renderBuildButton() {
         this._buildButton = new PIXI.Sprite(PIXI.Assets.get('hammer-button'));
         this._buildButton.x = screenWidth - this._stair.sprite.width / 2;
         this._buildButton.y = this._stair.sprite.height / 2 - this._buildButton.height + 100;
+        this._buildButton.zIndex = 3;
 
         this._buildButton.interactive = true;
         this._buildButton.cursor = 'pointer';

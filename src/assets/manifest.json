@@ -78,6 +78,35 @@
           "srcs": "src/assets/sprites/new-stair-3.png"
         }
       ]
+    },
+    {
+      "name": "decorations",
+      "assets": [
+        {
+          "name": "cropped-plant",
+          "srcs": "src/assets/sprites/cropped-plant.png"
+        },
+        {
+          "name": "globe",
+          "srcs": "src/assets/sprites/globe.png"
+        },
+        {
+          "name": "table",
+          "srcs": "src/assets/sprites/table.png"
+        },
+        {
+          "name": "wide-plant",
+          "srcs": "src/assets/sprites/wide-plant.png"
+        },
+        {
+          "name": "small-plant",
+          "srcs": "src/assets/sprites/small-plant.png"
+        },
+        {
+          "name": "coach",
+          "srcs": "src/assets/sprites/coach.png"
+        }
+      ]
     }
   ]
 }

@@ -13,6 +13,7 @@ export class Stair {
         const yPosition = this.sprite.height + 50;
         this.sprite.x = xPosition;
         this.sprite.y = yPosition;
+        this.sprite.zIndex = 2;
         this.sprite.anchor.set(1, 1);
 
         this.initAnimation(yPosition);
