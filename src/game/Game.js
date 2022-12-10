@@ -1,20 +1,22 @@
 import * as PIXI from 'pixijs';
 import { Stair } from './Stair';
 import gameConfig from './config.json';
+import { BuildMenu } from './BuildMenu.js';
 
 const { screenWidth } = gameConfig;
 
 export class Game {
     constructor() {
         this.container = new PIXI.Container();
-        this.stair = null;
-        this.buildButton = null;
+        this._stair = null;
+        this._buildButton = null;
     }
 
     start() {
         this.renderBackground();
         this.renderStair();
         this.renderBuildButton();
+        this.renderMenu();
     }
 
     renderBackground() {
@@ -23,21 +25,33 @@ export class Game {
     }
 
     renderStair() {
-        this.stair = new Stair(screenWidth);
-        this.container.addChild(this.stair.sprite);
+        this._stair = new Stair(screenWidth);
+        this.container.addChild(this._stair.sprite);
+    }
+
+    renderMenu() {
+        const menuXPosition = screenWidth - 520;
+        const menuYPosition = 60;
+        this._menu = new BuildMenu(menuXPosition, menuYPosition);
+        this.container.addChild(this._menu.container);
     }
 
     renderBuildButton() {
-        this.buildButton = new PIXI.Sprite(PIXI.Assets.get('hammer-button'));
-        this.buildButton.x = screenWidth - this.stair.sprite.width / 2;
-        this.buildButton.y = this.stair.sprite.height / 2 - this.buildButton.height;
+        this._buildButton = new PIXI.Sprite(PIXI.Assets.get('hammer-button'));
+        this._buildButton.x = screenWidth - this._stair.sprite.width / 2;
+        this._buildButton.y = this._stair.sprite.height / 2 - this._buildButton.height;
 
-        this.buildButton.interactive = true;
-        this.buildButton.cursor = 'pointer';
-        this.buildButton.on('pointerdown', () => {
-            console.log('build');
+        this._buildButton.interactive = true;
+        this._buildButton.cursor = 'pointer';
+        this._buildButton.on('pointerdown', () => {
+            this.openMenu();
         });
 
-        this.container.addChild(this.buildButton);
+        this.container.addChild(this._buildButton);
+    }
+
+    openMenu() {
+        this._menu.show();
+        this._buildButton.visible = false;
     }
 }
