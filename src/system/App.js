@@ -4,6 +4,7 @@ export class App {
     async run(game, gameConfig) {
         const { screenWidth, screenHeight, backgroundColor } = gameConfig;
 
+        // Init app
         this.app = new PIXI.Application({
             width: screenWidth,
             height: screenHeight,
@@ -11,8 +12,11 @@ export class App {
         });
         document.body.appendChild(this.app.view);
 
+        // Load assets
+        // TODO: Split sprites by load priority & load some of them in background
         await this.loadAssets();
 
+        // Start game
         this.app.stage.addChild(game.container);
         game.start();
     }
