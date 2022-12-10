@@ -23,6 +23,6 @@ export class App {
 
     async loadAssets() {
         await PIXI.Assets.init({ manifest: '/src/assets/manifest.json' });
-        await PIXI.Assets.loadBundle('common');
+        await PIXI.Assets.loadBundle(['common', 'menu']);
     }
 }

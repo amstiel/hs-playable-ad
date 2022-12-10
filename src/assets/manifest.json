@@ -20,6 +20,39 @@
           "srcs": "src/assets/sprites/homescapes-logo.png"
         }
       ]
+    },
+    {
+      "name": "menu",
+      "assets":[
+        {
+          "name": "hammer-button",
+          "srcs": "src/assets/sprites/icon-hammer.png"
+        },
+        {
+          "name":"menu-ok",
+          "srcs":"src/assets/sprites/menu-ok.png"
+        },
+        {
+          "name":"menu-item",
+          "srcs":"src/assets/sprites/menu-item.png"
+        },
+        {
+          "name":"menu-choosed",
+          "srcs":"src/assets/sprites/menu-choosed.png"
+        },
+        {
+          "name": "menu-stair-1",
+          "srcs": "src/assets/sprites/menu-stair-1.png"
+        },
+        {
+          "name": "menu-stair-2",
+          "srcs": "src/assets/sprites/menu-stair-2.png"
+        },
+        {
+          "name": "menu-stair-3",
+          "srcs": "src/assets/sprites/menu-stair-3.png"
+        }
+      ]
     }
   ]
 }
