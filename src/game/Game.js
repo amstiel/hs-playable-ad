@@ -10,6 +10,7 @@ const { screenWidth, screenHeight } = gameConfig;
 export class Game {
     constructor() {
         this.container = new PIXI.Container();
+        this.container.sortableChildren = true;
         this._stair = null;
         this._buildButton = null;
     }
@@ -20,6 +21,7 @@ export class Game {
         this.renderBuildButton();
         this.renderMenu();
         this.renderCallToActionButton();
+        this.renderLogo();
 
         eventBus.on('stair-variant-confirm', () => {
             this._menu.hide();
@@ -35,6 +37,14 @@ export class Game {
     renderStair() {
         this._stair = new Stair(screenWidth);
         this.container.addChild(this._stair.sprite);
+    }
+
+    renderLogo() {
+        const homescapesLogo = new PIXI.Sprite(PIXI.Assets.get('homescapes-logo'));
+        homescapesLogo.x = 32;
+        homescapesLogo.y = 5;
+        homescapesLogo.zIndex = 2;
+        this.container.addChild(homescapesLogo);
     }
 
     renderCallToActionButton() {
