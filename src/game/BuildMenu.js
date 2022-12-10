@@ -3,11 +3,13 @@ import { BuildMenuButton } from './BuildMenuButton';
 import { eventBus } from '../system/EventBus';
 
 const menuButtonXOffset = 130;
+const confirmationButtonDefaultXOffset = 20;
 
 export class BuildMenu {
     constructor(xPosition, yPosition) {
         this._selectedStairVariant = null;
         this._menuButtons = [];
+        this._confirmationButton = null;
 
         this.container = new PIXI.Container();
         this.container.visible = false;
@@ -17,6 +19,7 @@ export class BuildMenu {
         this.container.y = yPosition;
 
         this.renderStairVariants();
+        this.renderConfirmationButton();
 
         eventBus.on('stair-variant-select', ({ detail }) => {
             this.selectStairVariant(detail.selectedStairVariant);
@@ -41,6 +44,19 @@ export class BuildMenu {
         });
     }
 
+    renderConfirmationButton() {
+        this._confirmationButton = PIXI.Sprite.from(PIXI.Assets.get('menu-ok'));
+        this._confirmationButton.x = confirmationButtonDefaultXOffset;
+        this._confirmationButton.y = 60;
+
+        this._confirmationButton.anchor.set(0.5, 0);
+        this._confirmationButton.visible = false;
+        this._confirmationButton.interactive = true;
+        this._confirmationButton.cursor = 'pointer';
+
+        this.container.addChild(this._confirmationButton);
+    }
+
     restartButtonsAnimation() {
         this._menuButtons.forEach((button) => button.restartAnimation());
     }
@@ -62,5 +78,9 @@ export class BuildMenu {
         });
 
         this._menuButtons[variantIndex - 1].isSelected = true;
+
+        this._confirmationButton.visible = true;
+        this._confirmationButton.x =
+            confirmationButtonDefaultXOffset + menuButtonXOffset * (variantIndex - 1);
     }
 }
