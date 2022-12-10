@@ -53,6 +53,23 @@
           "srcs": "src/assets/sprites/menu-stair-3.png"
         }
       ]
+    },
+    {
+      "name": "stairs",
+      "assets": [
+        {
+          "name": "stair-variant-1",
+          "srcs": "src/assets/sprites/new-stair-1.png"
+        },
+        {
+          "name": "stair-variant-2",
+          "srcs": "src/assets/sprites/new-stair-2.png"
+        },
+        {
+          "name": "stair-variant-3",
+          "srcs": "src/assets/sprites/new-stair-3.png"
+        }
+      ]
     }
   ]
 }

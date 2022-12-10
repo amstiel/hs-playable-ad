@@ -1,7 +1,7 @@
 import * as PIXI from 'pixijs';
 import { Stair } from './Stair';
+import { BuildMenu } from './BuildMenu';
 import gameConfig from './config.json';
-import { BuildMenu } from './BuildMenu.js';
 
 const { screenWidth } = gameConfig;
 
@@ -39,7 +39,7 @@ export class Game {
     renderBuildButton() {
         this._buildButton = new PIXI.Sprite(PIXI.Assets.get('hammer-button'));
         this._buildButton.x = screenWidth - this._stair.sprite.width / 2;
-        this._buildButton.y = this._stair.sprite.height / 2 - this._buildButton.height;
+        this._buildButton.y = this._stair.sprite.height / 2 - this._buildButton.height + 100;
 
         this._buildButton.interactive = true;
         this._buildButton.cursor = 'pointer';
