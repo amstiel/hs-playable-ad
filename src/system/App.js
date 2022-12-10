@@ -10,7 +10,8 @@ export class App {
             height: screenHeight,
             backgroundColor,
         });
-        document.body.appendChild(this.app.view);
+
+        window.document.body.appendChild(this.app.view);
 
         // Load assets
         // TODO: Split sprites by load priority & load some of them in background

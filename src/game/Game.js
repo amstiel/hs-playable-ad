@@ -1,16 +1,14 @@
 import * as PIXI from 'pixijs';
-import { Stair } from './Stair.js';
+import { Stair } from './Stair';
 import gameConfig from './config.json';
 
-const { screenWidth, screenHeight } = gameConfig;
+const { screenWidth } = gameConfig;
 
 export class Game {
-    container = null;
-    stair = null;
-    buildButton = null;
-
     constructor() {
         this.container = new PIXI.Container();
+        this.stair = null;
+        this.buildButton = null;
     }
 
     start() {
@@ -35,7 +33,7 @@ export class Game {
         this.buildButton.y = this.stair.sprite.height / 2 - this.buildButton.height;
 
         this.buildButton.interactive = true;
-        this.buildButton.cursor = "pointer";
+        this.buildButton.cursor = 'pointer';
         this.buildButton.on('pointerdown', () => {
             console.log('build');
         });

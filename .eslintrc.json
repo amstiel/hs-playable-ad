@@ -1,0 +1,18 @@
+{
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2022
+    },
+    "plugins": ["prettier", "import"],
+    "extends": ["airbnb-base", "prettier"],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "class-methods-use-this": "off",
+        "import/prefer-default-export": "off",
+        "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
+    }
+}

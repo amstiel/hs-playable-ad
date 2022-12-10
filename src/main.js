@@ -1,5 +1,5 @@
-import { App } from './system/App.js';
-import { Game } from './game/Game.js';
+import { App } from './system/App';
+import { Game } from './game/Game';
 import gameConfig from './game/config.json';
 
 const app = new App();

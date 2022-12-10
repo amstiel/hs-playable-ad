@@ -1,11 +1,11 @@
 {
-  "bundles":[
+  "bundles": [
     {
-      "name":"common",
-      "assets":[
+      "name": "common",
+      "assets": [
         {
-          "name":"background",
-          "srcs":"src/assets/sprites/background.png"
+          "name": "background",
+          "srcs": "src/assets/sprites/background.png"
         },
         {
           "name": "austin",
@@ -23,22 +23,22 @@
     },
     {
       "name": "menu",
-      "assets":[
+      "assets": [
         {
           "name": "hammer-button",
           "srcs": "src/assets/sprites/icon-hammer.png"
         },
         {
-          "name":"menu-ok",
-          "srcs":"src/assets/sprites/menu-ok.png"
+          "name": "menu-ok",
+          "srcs": "src/assets/sprites/menu-ok.png"
         },
         {
-          "name":"menu-item",
-          "srcs":"src/assets/sprites/menu-item.png"
+          "name": "menu-item",
+          "srcs": "src/assets/sprites/menu-item.png"
         },
         {
-          "name":"menu-choosed",
-          "srcs":"src/assets/sprites/menu-choosed.png"
+          "name": "menu-choosed",
+          "srcs": "src/assets/sprites/menu-choosed.png"
         },
         {
           "name": "menu-stair-1",

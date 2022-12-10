@@ -1,8 +1,6 @@
 import * as PIXI from 'pixijs';
 
 export class Stair {
-    sprite = null;
-
     constructor(xPosition) {
         this.sprite = new PIXI.Sprite(PIXI.Assets.get('old-stair'));
         this.sprite.x = xPosition;
