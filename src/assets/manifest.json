@@ -18,6 +18,10 @@
         {
           "name": "homescapes-logo",
           "srcs": "src/assets/sprites/homescapes-logo.png"
+        },
+        {
+          "name": "final-modal",
+          "srcs": "src/assets/sprites/final-modal.png"
         }
       ]
     },

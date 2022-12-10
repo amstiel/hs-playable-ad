@@ -54,6 +54,10 @@ export class BuildMenu {
         this._confirmationButton.interactive = true;
         this._confirmationButton.cursor = 'pointer';
 
+        this._confirmationButton.on('pointerdown', () => {
+            eventBus.emit('stair-variant-confirm');
+        });
+
         this.container.addChild(this._confirmationButton);
     }
 
