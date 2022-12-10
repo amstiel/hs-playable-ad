@@ -22,6 +22,7 @@ export class Game {
         this.renderMenu();
         this.renderCallToActionButton();
         this.renderLogo();
+        this.renderAustin();
 
         eventBus.on('stair-variant-confirm', () => {
             this._menu.hide();
@@ -45,6 +46,13 @@ export class Game {
         homescapesLogo.y = 5;
         homescapesLogo.zIndex = 2;
         this.container.addChild(homescapesLogo);
+    }
+
+    renderAustin() {
+        const austin = new PIXI.Sprite(PIXI.Assets.get('austin'));
+        austin.x = screenWidth / 2;
+        austin.y = screenHeight / 2 - austin.height / 2 - 60;
+        this.container.addChild(austin);
     }
 
     renderCallToActionButton() {
