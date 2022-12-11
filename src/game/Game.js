@@ -62,6 +62,11 @@ export class Game {
 
         ctaButtonSprite.interactive = true;
         ctaButtonSprite.cursor = 'pointer';
+        ctaButtonSprite.on('pointerdown', () => {
+            window.open(
+                'https://play.google.com/store/apps/details?id=com.playrix.homescapes&hl=en&gl=US'
+            );
+        });
         ctaButtonSprite.anchor.set(0.5, 0.5);
 
         ctaButtonSprite.zIndex = 5;
@@ -92,7 +97,6 @@ export class Game {
     renderDecorations() {
         const decorations = new Decorations(this.container);
         decorations.render();
-        // this.container.addChild(decorations.container);
     }
 
     renderBuildButton() {
@@ -122,7 +126,7 @@ export class Game {
         finalModal.anchor.set(0.5, 0.5);
         finalModal.x = screenWidth / 2;
         finalModal.y = screenHeight / 2 - 80;
-        finalModal.zIndex = 4;
+        finalModal.zIndex = 5;
         gsap.to(finalModal.scale, {
             startAt: {
                 x: 0.7,
