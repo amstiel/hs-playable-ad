@@ -39,6 +39,7 @@ export class Game {
 
     renderStair() {
         this._stair = new Stair(screenWidth);
+        this._stair.sprite.zIndex = 2;
         this.container.addChild(this._stair.sprite);
     }
 
@@ -116,10 +117,10 @@ export class Game {
 
     renderFinalModal() {
         const graphics = new PIXI.Graphics();
-        graphics.beginFill(0x000000, 0.4);
+        graphics.beginFill(0x000000, 0.6);
         graphics.drawRect(0, 0, screenWidth, screenHeight);
         graphics.endFill();
-        graphics.zIndex = 1;
+        graphics.zIndex = 4;
         this.container.addChild(graphics);
 
         const finalModal = new PIXI.Sprite(PIXI.Assets.get('final-modal'));
