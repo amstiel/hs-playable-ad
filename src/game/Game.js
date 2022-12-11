@@ -105,6 +105,18 @@ export class Game {
         this._buildButton.x = screenWidth - this._stair.sprite.width / 2;
         this._buildButton.y = this._stair.sprite.height / 2 - this._buildButton.height + 100;
         this._buildButton.zIndex = 3;
+        this._buildButton.alpha = 0;
+
+        gsap.to(this._buildButton, {
+            startAt: {
+                y: this._buildButton.y - 75,
+                alpha: 0,
+            },
+            y: this._buildButton.y,
+            alpha: 1,
+            duration: 0.15,
+            delay: 2,
+        });
 
         this._buildButton.interactive = true;
         this._buildButton.cursor = 'pointer';
