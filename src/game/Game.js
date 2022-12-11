@@ -1,8 +1,10 @@
 import * as PIXI from 'pixijs';
-import gsap from 'gsap';
 import { Stair } from './Stair';
 import { BuildMenu } from './BuildMenu';
 import { Decorations } from './Decorations';
+import { FinalModal } from './FinalModal';
+import { CallToActionButton } from './CallToActionButton';
+import { HammerButton } from './HammerButton';
 import { eventBus } from '../system/EventBus';
 import gameConfig from './config.json';
 
@@ -13,7 +15,7 @@ export class Game {
         this.container = new PIXI.Container();
         this.container.sortableChildren = true;
         this._stair = null;
-        this._buildButton = null;
+        this._hammerButton = null;
     }
 
     start() {
@@ -59,32 +61,8 @@ export class Game {
     }
 
     renderCallToActionButton() {
-        const ctaButtonSprite = new PIXI.Sprite(PIXI.Assets.get('cta-button'));
-
-        ctaButtonSprite.interactive = true;
-        ctaButtonSprite.cursor = 'pointer';
-        ctaButtonSprite.on('pointerdown', () => {
-            window.open(
-                'https://play.google.com/store/apps/details?id=com.playrix.homescapes&hl=en&gl=US'
-            );
-        });
-        ctaButtonSprite.anchor.set(0.5, 0.5);
-
-        ctaButtonSprite.zIndex = 5;
-
-        ctaButtonSprite.x = screenWidth / 2;
-        ctaButtonSprite.y = screenHeight - ctaButtonSprite.height / 2 - 10;
-
-        gsap.to(ctaButtonSprite.scale, {
-            ease: 'power2.out',
-            x: 1.07,
-            y: 1.07,
-            duration: 0.5,
-            repeat: -1,
-            yoyo: true,
-        });
-
-        this.container.addChild(ctaButtonSprite);
+        const ctaButton = new CallToActionButton();
+        this.container.addChild(ctaButton.sprite);
     }
 
     renderMenu() {
@@ -101,59 +79,25 @@ export class Game {
     }
 
     renderBuildButton() {
-        this._buildButton = new PIXI.Sprite(PIXI.Assets.get('hammer-button'));
-        this._buildButton.x = screenWidth - this._stair.sprite.width / 2;
-        this._buildButton.y = this._stair.sprite.height / 2 - this._buildButton.height + 100;
-        this._buildButton.zIndex = 3;
-        this._buildButton.alpha = 0;
+        this._hammerButton = new HammerButton(
+            screenWidth - this._stair.sprite.width / 2,
+            this._stair.sprite.height / 2 - 80,
+            () => {
+                this.openMenu();
+            }
+        );
 
-        gsap.to(this._buildButton, {
-            startAt: {
-                y: this._buildButton.y - 75,
-                alpha: 0,
-            },
-            y: this._buildButton.y,
-            alpha: 1,
-            duration: 0.15,
-            delay: 2,
-        });
-
-        this._buildButton.interactive = true;
-        this._buildButton.cursor = 'pointer';
-        this._buildButton.on('pointerdown', () => {
-            this.openMenu();
-        });
-
-        this.container.addChild(this._buildButton);
+        this.container.addChild(this._hammerButton.sprite);
     }
 
     renderFinalModal() {
-        const graphics = new PIXI.Graphics();
-        graphics.beginFill(0x000000, 0.6);
-        graphics.drawRect(0, 0, screenWidth, screenHeight);
-        graphics.endFill();
-        graphics.zIndex = 4;
-        this.container.addChild(graphics);
-
-        const finalModal = new PIXI.Sprite(PIXI.Assets.get('final-modal'));
-        finalModal.anchor.set(0.5, 0.5);
-        finalModal.x = screenWidth / 2;
-        finalModal.y = screenHeight / 2 - 80;
-        finalModal.zIndex = 5;
-        gsap.to(finalModal.scale, {
-            startAt: {
-                x: 0.7,
-                y: 0.7,
-            },
-            x: 1,
-            y: 1,
-            duration: 0.25,
-        });
-        this.container.addChild(finalModal);
+        const finalModal = new FinalModal();
+        finalModal.render();
+        this.container.addChild(finalModal.container);
     }
 
     openMenu() {
         this._menu.show();
-        this._buildButton.visible = false;
+        this._hammerButton.hide();
     }
 }

@@ -7,7 +7,6 @@ const confirmationButtonDefaultXOffset = 20;
 
 export class BuildMenu {
     constructor(xPosition, yPosition) {
-        this._selectedStairVariant = null;
         this._menuButtons = [];
         this._confirmationButton = null;
 
@@ -75,8 +74,6 @@ export class BuildMenu {
     }
 
     selectStairVariant(variantIndex) {
-        this._selectedStairVariant = variantIndex;
-
         this._menuButtons.forEach((menuButton) => {
             menuButton.isSelected = false;
         });
