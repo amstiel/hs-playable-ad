@@ -5,27 +5,27 @@
       "assets": [
         {
           "name": "background",
-          "srcs": "src/assets/sprites/background.png"
+          "srcs": "assets/sprites/background.png"
         },
         {
           "name": "austin",
-          "srcs": "src/assets/sprites/austin.png"
+          "srcs": "assets/sprites/austin.png"
         },
         {
           "name": "old-stair",
-          "srcs": "src/assets/sprites/old-stair.png"
+          "srcs": "assets/sprites/old-stair.png"
         },
         {
           "name": "homescapes-logo",
-          "srcs": "src/assets/sprites/homescapes-logo.png"
+          "srcs": "assets/sprites/homescapes-logo.png"
         },
         {
           "name": "final-modal",
-          "srcs": "src/assets/sprites/final-modal.png"
+          "srcs": "assets/sprites/final-modal.png"
         },
         {
           "name": "cta-button",
-          "srcs": "src/assets/sprites/button.png"
+          "srcs": "assets/sprites/button.png"
         }
       ]
     },
@@ -34,31 +34,31 @@
       "assets": [
         {
           "name": "hammer-button",
-          "srcs": "src/assets/sprites/icon-hammer.png"
+          "srcs": "assets/sprites/icon-hammer.png"
         },
         {
           "name": "menu-ok",
-          "srcs": "src/assets/sprites/menu-ok.png"
+          "srcs": "assets/sprites/menu-ok.png"
         },
         {
           "name": "menu-item",
-          "srcs": "src/assets/sprites/menu-item.png"
+          "srcs": "assets/sprites/menu-item.png"
         },
         {
           "name": "menu-choosed",
-          "srcs": "src/assets/sprites/menu-choosed.png"
+          "srcs": "assets/sprites/menu-choosed.png"
         },
         {
           "name": "menu-stair-1",
-          "srcs": "src/assets/sprites/menu-stair-1.png"
+          "srcs": "assets/sprites/menu-stair-1.png"
         },
         {
           "name": "menu-stair-2",
-          "srcs": "src/assets/sprites/menu-stair-2.png"
+          "srcs": "assets/sprites/menu-stair-2.png"
         },
         {
           "name": "menu-stair-3",
-          "srcs": "src/assets/sprites/menu-stair-3.png"
+          "srcs": "assets/sprites/menu-stair-3.png"
         }
       ]
     },
@@ -67,15 +67,15 @@
       "assets": [
         {
           "name": "stair-variant-1",
-          "srcs": "src/assets/sprites/new-stair-1.png"
+          "srcs": "assets/sprites/new-stair-1.png"
         },
         {
           "name": "stair-variant-2",
-          "srcs": "src/assets/sprites/new-stair-2.png"
+          "srcs": "assets/sprites/new-stair-2.png"
         },
         {
           "name": "stair-variant-3",
-          "srcs": "src/assets/sprites/new-stair-3.png"
+          "srcs": "assets/sprites/new-stair-3.png"
         }
       ]
     },
@@ -84,27 +84,27 @@
       "assets": [
         {
           "name": "cropped-plant",
-          "srcs": "src/assets/sprites/cropped-plant.png"
+          "srcs": "assets/sprites/cropped-plant.png"
         },
         {
           "name": "globe",
-          "srcs": "src/assets/sprites/globe.png"
+          "srcs": "assets/sprites/globe.png"
         },
         {
           "name": "table",
-          "srcs": "src/assets/sprites/table.png"
+          "srcs": "assets/sprites/table.png"
         },
         {
           "name": "wide-plant",
-          "srcs": "src/assets/sprites/wide-plant.png"
+          "srcs": "assets/sprites/wide-plant.png"
         },
         {
           "name": "small-plant",
-          "srcs": "src/assets/sprites/small-plant.png"
+          "srcs": "assets/sprites/small-plant.png"
         },
         {
           "name": "coach",
-          "srcs": "src/assets/sprites/coach.png"
+          "srcs": "assets/sprites/coach.png"
         }
       ]
     }
